@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的appendTo函数实例-柯乐义</title>
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <style>
+    </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#all").change(function () {
+                if (this.checked) {
+                    $("input").each(function () {
+                        $(this).attr("checked", true);
+                    })
+                } else {
+                    console.log(1);
+                    $("input").each(function () {
+                        $(this).attr("checked", false);
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="outer">
+    <div>脚本之家欢迎您</div>
+    <div class="inner">
+        <ul>
+            <li><input id="all" type="checkbox">123</li>
+            <li><input type="checkbox">123</li>
+            <li><input type="checkbox">123</li>
+            <li><input type="checkbox">123</li>
+            <li><input type="checkbox">123</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
