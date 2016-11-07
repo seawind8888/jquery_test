@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file"  onchange="preview(this)" value="">
+<div id="console"></div>
+</body>
+<script>
+    function preview(file) {
+
+
+        var prevDiv = document.getElementById('console');
+        if (file.files && file.files[0]) {
+            console.log(file.files);
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                prevDiv.innerHTML = '<img width="50px" height="50px" src="' + evt.target.result + '" />';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } else {
+            prevDiv.innerHTML = '<div class="img" width="100%" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/plupload.full.min.js"></script>
+    <script type="text/javascript"  src="js/upload.js"></script>
+
+</head>
+<body>
+<div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right" >项目图片：</label>
+
+    <div class="col-sm-10">
+        <div class="form-group">
+            <div><input id="selectfiles" type="file" href="javascript:void(0);"  class='btn'/>选择文件</div>
+            <a id="postfiles" href="javascript:void(0);" class='btn'>开始上传</a>
+        </div>
+        <div class="form-group">
+            <div id="container" class="col-sm-12">
+                <ul id="ossfile" class="ace-thumbnails clearfix">你的浏览器不支持flash,Silverlight或者HTML5！</ul>
+            </div>
+            <div id="console"></div>
+            <img id='show' width="50px" height="50px">
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    $(function(){
+        /*$('#selectfiles').change(function () {
+            var val = $(this).val();
+            console.log(val);
+        });*/
+
+
+        $.cxd_upload({
+
+           selectfiles:"selectfiles" ,
+            container:"container" ,
+            ossfile:"ossfile",
+            postfiles:"postfiles",
+            console:"console"
+        });
+
+
+        //upload('loan_pawn_pic','selectfiles_pawn_pic','container_pawn_pic','ossfile_pawn_pic','postfiles_pawn_pic','console_pawn_pic');
+        // upload('loan_loan_material','selectfiles_loan_material','container_loan_material','ossfile_loan_material','postfiles_loan_material','console_loan_material');
+    });
+
+
+</script>
+</html>

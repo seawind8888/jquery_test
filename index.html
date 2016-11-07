@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="credit" maxlength="18">
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+$(function(){
+    $("input[name=credit]").blur(function(){
+        var input_val = $(this).val();
+        var test_val = /^[A-Z0-9]{2}[0-9]{6}[A-Z0-9]{10}$/;
+        if(!test_val.test(input_val)){
+            console.log(1);
+        }
+    })
+})
+</script>
+</html>

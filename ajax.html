@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="div">
+    <ul id="nav1" class="nav"> // 用于存放第一个ul数据的，里面的li标签即数据都是js生成的。
+        <span style="color:red;">this is nav1</span>
+    </ul>
+    <ul id="nav2" class="nav"> //存放第二个ul数据
+        <span style="color:red;">this is nav2</span>
+    </ul>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        type: "get",    //请求方式为get，也可以是设置为post
+        url: "listData.json",     //所要获取的json文件相对地址，注意不要写错了，我这里放在同一个目录下的
+        async: true,　　　　　　　　//是否为异步请求，ture为异步请求，false为同步请求
+        success: function (d) {    //当请求之后调用。传入返回后的数据，以及包含成功代码的字符串
+            console.log(d);    //这里会弹出json文件中所有的字符串数据，如图3-1
+//            var d = eval("(" + d + ")");  // 将json字符串数据解析成对象
+//            console.log(d) ;    //弹出： 如图3-2
+//            var str = "<span style='color:red;'>this is nav1</span>";
+//            var str1 = "<span style='color:red;'>this is nav2</span>";
+//            var arr1 = d.list1;
+//            var arr2 = d.list;
+//            if (arr1 != null) {
+//                for (var i = 0; i < arr1.length; i++) {  //这里面都是创建li并赋值
+//                    str = str + "<li><a href='http://www.baidu.com'>" + arr1[i].name + "</a></li>";
+//                }
+//                $("#nav1").html(str);
+//            }
+//            if (arr2 != null) {
+//                for (var j = 0; j < arr2.length; j++) {
+//                    str1 += "<li><a href='" + arr2[j].url + "'>" + arr2[j].name + "</a></li>";
+//                }
+//                $("#nav2").html(str1);
+//            }
+        }
+    });
+</script>
+</html>
+</html>

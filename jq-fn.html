@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    (function ($) {
+        $.fn.nihao  = function (a,b) {
+            var c = $.extend({
+                d:null,
+                e:null
+            },a);
+            console.log(c);
+        }
+    })(jQuery);
+    $(function () {
+        $(document).nihao({
+            d:'123',
+            e:'456'
+        })
+    });
+</script>
+</html>
