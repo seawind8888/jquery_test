@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="btn1">123</div>
+<div id="btn2">3213</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+  $(function () {
+    aaa = null;
+    $('#btn1').on('click',function () {
+      this.aaa = 111;
+      $('#btn2').on('click',function () {
+        alert(aaa);
+      })
+    })
+  })
+</script>
+</html>

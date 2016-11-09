@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <style>
+        div{
+
+        }
+        div>img{
+            width: 100%;
+            height: 100%;
+        }
+        /*div:nth-of-type(1){*/
+            /*background:url(img/1.jpg) no-repeat;*/
+        /*}*/
+        /*div:nth-of-type(2){*/
+            /*background:url(img/2.jpeg) no-repeat;*/
+        /*}*/
+        /*div:nth-of-type(3){*/
+            /*background:url(img/3.jpeg) no-repeat;*/
+        /*}*/
+        /*div:nth-of-type(4){*/
+            /*background:url(img/4.jpeg) no-repeat;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div><img src="img/1.jpg"></div>
+<div><img src="img/2.jpeg"></div>
+<div><img src="img/3.jpeg"></div>
+<div><img src="img/4.jpeg"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var win_width = $(window).width();
+        var win_height = $(window).height();
+        $('div').css({width:win_width,height:win_height});
+        $('div').on('click',function () {
+            var top_pos = $(this).next().offset();
+//            console.log(top_pos);
+           $('body').animate({scrollTop:top_pos.top},800,'linear');
+        })
+    });
+</script>
+</html>
