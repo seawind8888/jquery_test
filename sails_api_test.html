@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="aaa">32312</div>
+</body>
+<script>
+    $('#aaa').on('click',function () {
+        $.ajax({
+            url:'http://127.0.0.1:1337/thing/',
+            dataType:'jsonp',
+            success:function (data) {
+                console.log(data);
+                alert(1);
+            },
+            error:function (e) {
+                console.log(e)
+            }
+        })
+    });
+</script>
+</html>
