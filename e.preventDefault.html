@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><input><b>111</b></li>
+    <li><input><b>222</b></li>
+    <li><input class="aaa"><b>333</b></li>
+    <li><input class="aaa"><b>444</b></li>
+    <li><input><b>555</b></li>
+    <button>1232131</button>
+</ul>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('button').on('click', function () {
+            $('input').each(function () {
+                if ($(this).hasClass('aaa')) {
+                    $(this).parents('li').find('b').css('color', 'red');
+                    e.preventDefault()
+                }
+            })
+        });
+
+    })
+</script>
+</html>

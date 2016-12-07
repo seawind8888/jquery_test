@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="abc">dwdawd</button>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#abc').on('click',function () {
+            $.ajax({
+                url: "http://localhost:9100/thinkphp-restful-api/api/user/1",
+                method: "POST",
+                dataType:'jsonp',
+                data: {"title": "标题", "article":"文章内容"},
+                success: function(rsp){ console.log(rsp)}
+            })
+        })
+    });
+</script>
+
+</html>
